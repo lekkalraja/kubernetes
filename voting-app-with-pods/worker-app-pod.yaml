@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: worker-app-pod
+  labels:
+    app: worker-app
+    tier: front-end
+spec:
+  containers:
+    - name: worker-app-c
+      image: kodekloud/examplevotingapp_worker:v1
+      resources:
+        limits:
+          cpu : "90m"
+          memory: "90M"

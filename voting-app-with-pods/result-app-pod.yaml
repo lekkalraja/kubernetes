@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: result-app-pod
+  labels:
+    app: result-app
+    tier: front-end
+spec:
+  containers:
+    - name: result-app-c
+      image: kodekloud/examplevotingapp_result:v1
+      ports:
+        - containerPort: 80
+      resources:
+        limits:
+          cpu : "30m"
+          memory: "30M"

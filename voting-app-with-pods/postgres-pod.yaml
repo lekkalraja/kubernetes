@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: postgres-pod
+  labels:
+    app: postgres-app
+    tier: front-end
+spec:
+  containers:
+    - name: postgres-app-c
+      image: postgres
+      ports:
+        - containerPort: 5432
+      env:
+        - name: POSTGRES_USER
+          value: "postgres"
+        - name: POSTGRES_PASSWORD
+          value: "postgres"
+      resources:
+        limits:
+          cpu : "30m"
+          memory: "30M"
