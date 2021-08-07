@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  "nginx-deployment"
+  labels:
+    app: "nginx-web-service"
+    tier: "front-end"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: "nginx-service"
+      labels:
+        app: "nginx-web-service"
+        tier: "front-end"
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: "50m"
+              memory: "30M"
+  selector:
+    matchLabels:
+      app: "nginx-web-service"
+      tier: "front-end"
