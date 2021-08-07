@@ -1,21 +1,21 @@
 ## Nginx Service
 
 ### Start the Nginx Service by executing below commands
-    ```shellscript
+    ```shell
         > kubectl create -f nginx-service/nginx-pod.yaml # Create POD
         > kubectl create -f nginx-service/nginx-service.yaml # Create Service
     ```
 
     (Or)
 
-    ```shellscript
+    ```shell
         > kubectl create -f nginx-service/nginx-deployment.yaml # Create Deployment
         > kubectl create -f nginx-service/nginx-service.yaml # Create Service
     ```
 
 #### Get the status by exec below commands
 
-    ```shellscript
+    ```shell
         > kubectl get pods # Get status of pods
         > kubectl get pods, svc # Get status of pods & service
 
@@ -30,7 +30,7 @@
 
 ### Other Useful commands to debug and delete
 
-    ```shellscript
+    ```shell
         > kubectl describe pod <pod_name>
         > kubectl delete pod <pod_name>
 
